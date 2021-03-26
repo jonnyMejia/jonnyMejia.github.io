@@ -45,24 +45,15 @@ typewriter
     .pauseFor(1000)
     .start();
 
-
-
-window.onscroll = function(){
-    AddOrRemove()
-};
-
-//Obtenemos el id de la etiqueta nav
-var Nav = document.getElementById("navbar");
-
-//Obtenemos la posición de desplazamiento
-var NavPosition = Nav.offsetTop;
-
-//Le agregamos y quitamos la clase Paste al nav
-function AddOrRemove(){
-    if(window.pageYOffset >= NavPosition){
-        Nav.classList.add("Paste");
-    }
-    else{
-        Nav.classList.remove("Paste");
+// Implementar dark mode  ami pagina web
+var color = 1   // 1 = white
+const dark_mode = function(){
+    document.documentElement.classList.toggle('dark-mode');
+    if(color){
+        document.getElementById('button-dark').innerHTML = '<b>Modo Claro'  
+        color = 0  // changing dark
+    }else{
+        document.getElementById('button-dark').innerHTML = '<b>Modo Oscuro'        
+        color = 1  // changing white
     }
 }
